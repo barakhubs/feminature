@@ -11,10 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('thematic_area_projects', function (Blueprint $table) {
+        Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('thematic_area_id')->constrained('thematics_areas');
-            $table->foreignId('project_id')->constrained('projects');
+            $table->string('title');
+            $table->string('slug')->unique();
+            $table->string('image');
+            $table->string('description');
+            $table->string('location');
+            $table->date('start_date');
+            $table->date('end_date');
             $table->timestamps();
         });
     }
@@ -24,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('thematic_area_projects');
+        Schema::dropIfExists('events');
     }
 };

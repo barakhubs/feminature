@@ -4750,7 +4750,7 @@ img {
 }
 .cta_section .newsletter button {
     border-radius: 20px;
-    background-color: rgb(19, 137, 153);
+    background-color: #105014;
     color: #ffffff;
     font-size: 14px;
     font-family: "Rubik";
@@ -5808,6 +5808,7 @@ about_section_s2 .about_left-content .feature_wrap_about {
     left: 55%;
     transform: translate(-50%, -50%);
     z-index: 11;
+    visibility: hidden;
 }
 @media (max-width: 1399px) {
     .video_section .video_wrap .video_btn,

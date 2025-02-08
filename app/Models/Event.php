@@ -5,31 +5,27 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ThematicArea extends Model
+class Event extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'title',
-        'description',
-        'image',
-        'status',
-        'icon',
         'slug',
+        'image',
+        'description',
+        'start_date',
+        'end_date',
+        'location',
     ];
-
-    public function getUrlAttribute()
-    {
-        return route('thematic-area.show', $this->slug);
-    }
 
     public function getImageUrlAttribute()
     {
         return asset('storage/' . $this->image);
     }
 
-    public function projects()
+    public function getUrlAttribute()
     {
-        return Project::whereJsonContains('thematic_areas', $this->title)->get();
+        return route('events.show', $this->slug);
     }
 }

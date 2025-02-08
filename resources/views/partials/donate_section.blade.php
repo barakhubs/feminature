@@ -13,7 +13,7 @@
                 <p>At Feminature Uganda, we are committed to improving the lives of women and youth through climate
                     action, advocacy, civic engagement, and economic empowerment. Together, we can create lasting change
                     in our communities. </p>
-                <a href="about.html" class="btn_primary"> Donate <i class="ti-arrow-right"></i></a>
+                <a href="#" class="btn_primary"> Donate <i class="ti-arrow-right"></i></a>
             </div>
         </div>
     </div>

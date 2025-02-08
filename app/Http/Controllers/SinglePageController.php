@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\BlogCategory;
+use App\Models\Event;
 use App\Models\Job;
 use App\Models\Partner;
+use App\Models\Project;
 use App\Models\Publication;
 use App\Models\Team;
 use App\Models\ThematicArea;
@@ -85,8 +87,14 @@ class SinglePageController extends Controller
     // listTeam
     public function listTeam()
     {
-        $teams = Team::where('status', 'published')->orderBy('created_at', 'desc')->get();
+        $teams = Team::where('status', 'published')->where('staff_type', operator: 'staff')->orderBy('created_at', 'desc')->get();
         return view('pages.singles.team-list', compact('teams'));
+    }
+
+    public function listBoard()
+    {
+        $boards = Team::where('status', 'published')->where('staff_type', 'board_member')->orderBy('created_at', 'desc')->get();
+        return view('pages.singles.board-list', compact('boards'));
     }
 
 
@@ -94,5 +102,31 @@ class SinglePageController extends Controller
     {
         $publications = Publication::where('status', 'published')->orderBy('created_at', 'desc')->get();
         return view('pages.singles.publication-list', compact('publications'));
+    }
+
+    public function showProject($slug)
+    {
+        $project = Project::where('slug', $slug)->first();
+        return view('pages.singles.project', compact('project'));
+    }
+
+    // listTeam
+    public function listProject()
+    {
+        $projects = Project::orderBy('created_at', 'desc')->get();
+        return view('pages.singles.project-list', compact('projects'));
+    }
+
+    public function showEvent($slug)
+    {
+        $event = Event::where('slug', $slug)->first();
+        return view('pages.singles.event', compact('event'));
+    }
+
+    // listTeam
+    public function listEvent()
+    {
+        $events = Event::orderBy('start_date', 'desc')->get();
+        return view('pages.singles.event-list', compact('events'));
     }
 }

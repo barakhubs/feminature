@@ -13,11 +13,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-12">
                     <div class="widget_column widget_about">
-                        <div class="footer_logo">
-                            <a href="index.html">
-                                <img src="{{ asset('assets/images/logo-s2.png') }}" alt="">
-                            </a>
-                        </div>
+                        <h2>About Us</h2>
                         <p>To Promote the Achievement of Gender Equality by Promoting Leadership and Voice for Active
                             Citizenry, Influencing Policy and the Holistic Growth and Transformation of Women and Youth
                             to Live Lives Free from Poverty and Violence in a Safe and Sustainable Environment.</p>
@@ -49,14 +45,14 @@
                     <div class="widget_column widget_link">
                         <h2>Quick Links</h2>
                         <ul>
-                            <li><a href="services-single.html">Who We Are</a></li>
-                            <li><a href="services-single.html">Thematic Areas</a></li>
-                            <li><a href="services-single.html">Get in Touch</a></li>
-                            <li><a href="services-single.html">Our Impact</a></li>
-                            <li><a href="services-single.html">Publications</a></li>
-                            <li><a href="services-single.html">Latest News</a></li>
+                            <li><a href={{ route('about') }}>Who We Are</a></li>
+                            <li><a href="{{ route('thematic-area.list') }}">Thematic Areas</a></li>
+                            <li><a href="{{ route('contact') }}">Get in Touch</a></li>
+                            <li><a href="{{ route('testimonials') }}">Our Impact</a></li>
+                            <li><a href="{{ route('publications.list') }}">Publications</a></li>
+                            <li><a href="{{ route('blog.list') }}">Latest News</a></li>
                             <li><a href="services-single.html">Upcoming Events</a></li>
-                            <li><a href="services-single.html">Jobs & Opportunities</a></li>
+                            <li><a href="{{ route('jobs.list') }}">Jobs & Opportunities</a></li>
                         </ul>
                     </div>
                 </div>

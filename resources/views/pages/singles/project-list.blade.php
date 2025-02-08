@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $thematicArea->title)
+@section('title', 'Our Projects')
 
 @section('content')
     <!--  page_title_section  start-->
@@ -9,10 +9,10 @@
             <div class="row">
                 <div class="col-12">
                     <div class="content">
-                        <h2>{{ $thematicArea->title }}</h2>
+                        <h2>Our Projects</h2>
                         <ul>
                             <li><a href="{{ url('/') }}">Home</a></li>
-                            <li>{{ $thematicArea->title }}</li>
+                            <li>Our Projects</li>
                         </ul>
                     </div>
                 </div>
@@ -23,39 +23,18 @@
         </div>
     </section>
 
-    <section class="services_single_section section_space">
+    <section class="service_section_s2 section_space">
         <div class="container">
-            <div class="wrap">
-                <div class="services_single_item_wrap">
-                    <div class="content">
-                        <h1>{!! $thematicArea->title !!}</h1>
-                        <div class="item_wrap">
-                            {!! $thematicArea->description !!}
-                        </div>
-                    </div>
-                    <div class="images">
-                        <img src="{{ $thematicArea->image_url }}" alt="">
-                    </div>
-                </div>
-            </div>
-            <br><br>
             <div class="row">
                 <div class="col-12">
                     <div class="top_title s2">
-                        <h2>Thematic Projects</h2>
-                        <h3>Projects under this {{ $thematicArea->title }}</h3>
+                        <h2>OUR PROJECTS</h2>
+                        <h3>Discover Our Impactful Initiatives</h3>
                     </div>
                 </div>
             </div>
-
-
-        </div>
-    </section>
-
-    <section class="service_section_s2">
-        <div class="container">
             <div class="row">
-                @foreach ($thematicArea->projects() as $item)
+                @foreach ($projects as $item)
                     <div class="col col-xl-4 col-lg-6 col-md-6 col-12">
                         <div class="service_card_s2">
                             <div class="image">
@@ -74,18 +53,4 @@
         </div>
     </section>
 
-    <section class="brand_section">
-        <h2 class="d-none">display hidden</h2>
-        <div class="container">
-            <div class="brand_slider">
-                @foreach ($partners as $item)
-                    <div class="item">
-                        <div class="image">
-                            <img src="{{ $item->logo_url }}" alt="{{ $item->name }}">
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
 @endsection

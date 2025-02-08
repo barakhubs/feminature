@@ -20,6 +20,7 @@ class TeamResource extends Resource
     protected static ?string $model = Team::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = 'Settings';
 
     public static function form(Form $form): Form
     {
@@ -31,6 +32,13 @@ class TeamResource extends Resource
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('designation')
                     ->required()
+                    ->columnSpanFull(),
+                Forms\Components\Select::make('staff_type')
+                    ->options([
+                        'staff' => 'Staff',
+                        'board_member' => 'Board Member',
+                    ])
+                    ->native(false)
                     ->columnSpanFull(),
                 Forms\Components\FileUpload::make('image')
                     ->image()
@@ -47,6 +55,8 @@ class TeamResource extends Resource
                     ])
                     ->inline()
                     ->required(),
+                Forms\Components\TextInput::make('email')
+                    ->columnSpanFull(),
                 Forms\Components\TextInput::make('facebook')
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('twitter')

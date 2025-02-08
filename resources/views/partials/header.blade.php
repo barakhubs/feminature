@@ -72,9 +72,9 @@
                   <a href="#">Who We Are</a>
                   <ul class="submenu">
                     <li><a href="{{ route('about') }}">About Us</a></li>
-                    <li><a href="#">Our Board</a></li>
+                    <li><a href="{{ route('board.list') }}">Our Board</a></li>
                     <li><a href="{{ route('team.list') }}">Our Team</a></li>
-                    <li><a href="#">Running Projects</a></li>
+                    <li><a href="{{ route('project.list') }}">Running Projects</a></li>
                   </ul>
                 </li>
                 <li class="menu_chaild">
@@ -90,11 +90,11 @@
                   <a href="#">Resource Center</a>
                   <ul class="submenu">
                     <li><a href="{{ route('blog.list') }}">Latest news</a></li>
-                    <li><a href="#">Upcoming Events</a></li>
+                    <li><a href="{{ route('events.list') }}">Upcoming Events</a></li>
                     <li><a href="{{ route ('publications.list') }}">Publications</a></li>
-                    <li><a href="#">Gallery</a></li>
+                    <li><a href="{{ route('gallery') }}">Gallery</a></li>
                     <li><a href="{{ route('jobs.list') }}">Join Us</a></li>
-                    <li><a href="#">Testimonial</a></li>
+                    <li><a href="{{ route('testimonials') }}">Testimonial</a></li>
                   </ul>
                 </li>
                 <li><a href="{{ route('contact') }}">Contact us</a></li>

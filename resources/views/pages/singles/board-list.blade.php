@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Our Team')
+@section('title', 'Our Board')
 
 @section('content')
     <!--  page_title_section  start-->
@@ -9,10 +9,10 @@
             <div class="row">
                 <div class="col-12">
                     <div class="content">
-                        <h2>Our Team</h2>
+                        <h2>Our Board</h2>
                         <ul>
                             <li><a href="{{ url('/') }}">Home</a></li>
-                            <li>Our Team</li>
+                            <li>Our Board</li>
                         </ul>
                     </div>
                 </div>
@@ -28,14 +28,14 @@
             <div class="row">
                 <div class="col-12">
                     <div class="top_title s2">
-                        <h2>OUR TEAM MEMBERS</h2>
-                        <h3>The Team Serving Humanity</h3>
+                        <h2>OUR BOARD MEMBERS</h2>
+                        <h3>The Board Serving Humanity</h3>
                     </div>
                 </div>
             </div>
             <div class="team_wrap">
                 <div class="row">
-                    @foreach ($teams as $item)
+                    @foreach ($boards as $item)
                     <div class="col col-lg-4 col-md-6 col-12">
                         <div class="team_card">
                             <div class="image">

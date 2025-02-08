@@ -7,9 +7,8 @@
               <img src="assets/images/features/1.png" alt="">
             </div>
             <div class="content">
-              <h2>Medical treatment</h2>
-              <span>We poor standard chunk of
-                Denounce righteous</span>
+              <h2>Climate Action</h2>
+              <span>Promoting sustainability and climate resilience.</span>
             </div>
             <div class="shape">
               <img src="assets/images/features/shape.png" alt="">
@@ -25,9 +24,8 @@
               <img src="assets/images/features/2.png" alt="">
             </div>
             <div class="content">
-              <h2>Team off project</h2>
-              <span>We poor standard chunk of
-                Denounce righteous</span>
+              <h2>Advocacy & Rights</h2>
+              <span>Empowering communities through advocacy and engagement.</span>
             </div>
             <div class="shape">
               <img src="assets/images/features/shape.png" alt="">
@@ -43,9 +41,8 @@
               <img src="assets/images/features/3.png" alt="">
             </div>
             <div class="content">
-              <h2>Donate to case</h2>
-              <span>We poor standard chunk of
-                Denounce righteous</span>
+              <h2>Economic Empowerment</h2>
+              <span>Fostering entrepreneurship and sustainable livelihoods.</span>
             </div>
             <div class="shape">
               <img src="assets/images/features/shape.png" alt="">
