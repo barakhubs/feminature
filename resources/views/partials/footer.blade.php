@@ -4,6 +4,7 @@
     $social_network = json_decode($settings->social_network, true);
     $email = $settings->support_email;
     $phone = $settings->support_phone;
+    $address = $settings->address;
 @endphp
 
 <section class="footer_section">
@@ -73,8 +74,7 @@
                     <div class="widget_column widget_contact">
                         <h2>Our Contacts</h2>
                         <div>
-                            <span>Adress: 27 Division St, Berakuti,
-                                NY 121102, USA</span>
+                            <span>{{ $address !== null ? $address : 'Arua City' }}</span>
                         </div>
                         <div>
                             <span>Phone: {{ $phone !== null ? $phone : '+256 70000000' }}</span>

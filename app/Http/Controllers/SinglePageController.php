@@ -6,6 +6,7 @@ use App\Models\Blog;
 use App\Models\BlogCategory;
 use App\Models\Job;
 use App\Models\Partner;
+use App\Models\Publication;
 use App\Models\Team;
 use App\Models\ThematicArea;
 use Illuminate\Http\Request;
@@ -89,4 +90,9 @@ class SinglePageController extends Controller
     }
 
 
+    public function listPublications()
+    {
+        $publications = Publication::where('status', 'published')->orderBy('created_at', 'desc')->get();
+        return view('pages.singles.publication-list', compact('publications'));
+    }
 }

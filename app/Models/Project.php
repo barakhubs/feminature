@@ -5,22 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Publication extends Model
+class Project extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'title',
         'description',
-        'file_path',
-        'type',
-        'published_at',
+        'start_date',
+        'end_date',
         'status',
     ];
-
-    // get filepath
-    public function getFilepathAttribute($value)
-    {
-        return asset('storage/' . $value);
-    }
 }

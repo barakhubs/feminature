@@ -39,4 +39,10 @@ Route::get('/thematic-areas', [SinglePageController::class, 'listThematicArea'])
 Route::get('/opportunities', [SinglePageController::class, 'listOpportunities'])->name('jobs.list');
 Route::get('/opportunities/{slug}', [SinglePageController::class, 'showOpportunity'])->name('jobs.show');
 
+// publications
+Route::get('/publications', [SinglePageController::class, 'listPublications'])->name('publications.list');
+Route::get('/publications/{slug}', [SinglePageController::class, 'showPublication'])->name('publications.show');
+
 Route::get('/our-teams', [SinglePageController::class, 'listTeam'])->name('team.list');
+Route::get('/contact', [HomePageController::class, 'contact'])->name('contact');
+Route::get('/about', [HomePageController::class, 'about'])->name('about');

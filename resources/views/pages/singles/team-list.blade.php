@@ -45,11 +45,11 @@
                                 <h2><a href="team-single.html">{{ $item->name }}</a></h2>
                                 <span>{{ $item->designation }}</span>
                                 <ul>
-                                    <li><a href="#"><i class="ti-facebook"></i></a></li>
-                                    <li><a href="#"><i class="ti-instagram"></i></a></li>
+                                    <li><a href="{{ ($item->facebook == 'null') ? '#' : $item->facebook }}"><i class="ti-facebook"></i></a></li>
+                                    <li><a href="{{ ($item->instagram == 'null') ? '#' : $item->instagram }}"><i class="ti-instagram"></i></a></li>
                                     <li><span></span></li>
-                                    <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
-                                    <li><a href="#"><i class="ti-vimeo-alt"></i></a></li>
+                                    <li><a href="{{ ($item->twitter == 'null') ? '#' : $item->twitter }}"><i class="ti-twitter-alt"></i></a></li>
+                                    <li><a href="{{ ($item->linkedin == 'null') ? '#' : $item->linkedin }}"><i class="ti-linkedin"></i></a></li>
                                 </ul>
                             </div>
                             <div class="shape">

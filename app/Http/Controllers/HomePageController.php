@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Partner;
 use App\Models\Slider;
 use App\Models\Testimonial;
 use App\Models\ThematicArea;
@@ -18,5 +19,16 @@ class HomePageController extends Controller
         $thematicAreas = ThematicArea::where('status', 1)->orderBy('created_at', 'desc')->take(3)->get();
 
         return view('home', compact('sliders', 'posts', 'testimonials', 'thematicAreas'));
+    }
+
+    public function contact ()
+    {
+        return view('pages.contact');
+    }
+
+    public function about ()
+    {
+        $partners = Partner::where('status', 1)->orderBy('created_at', 'desc')->take(10)->get();
+        return view('pages.about', compact('partners'));
     }
 }

@@ -6,6 +6,7 @@ use App\Filament\Resources\PublicationResource\Pages;
 use App\Filament\Resources\PublicationResource\RelationManagers;
 use App\Models\Publication;
 use Filament\Forms;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -25,20 +26,50 @@ class PublicationResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('title')
-                    ->required(),
-                Forms\Components\Textarea::make('description')
-                    ->required()
-                    ->columnSpanFull(),
-                Forms\Components\TextInput::make('file_path')
-                    ->required(),
-                Forms\Components\TextInput::make('type')
-                    ->required(),
-                Forms\Components\TextInput::make('published_at')
-                    ->required(),
-                Forms\Components\TextInput::make('status')
-                    ->required(),
-            ]);
+                Section::make('Publication Details')
+                    ->schema([
+                        Forms\Components\TextInput::make('title')
+                            ->required(),
+                        Forms\Components\RichEditor::make('description')
+                            ->required()
+                            ->columnSpanFull(),
+                        Forms\Components\FileUpload::make('file_path')
+                            ->label('Upload Publication document')
+                            ->required()
+                            ->preserveFilenames()
+                            ->acceptedFileTypes(['application/pdf']),
+                    ])
+                    ->columnSpan(2),
+
+                Section::make('Other Details')
+                    ->schema([
+                        Forms\Components\Select::make('type')
+                            ->label('Publication Type')
+                            ->options([
+                                'annual_report' => 'Annual Report',
+                                'newsletter' => 'Newsletter',
+                                'call_of_interest' => 'Call of Interest',
+                                'press_release' => 'Press Release',
+                                'others' => 'Others',
+                            ])
+                            ->native(false)
+                            ->required(),
+                        Forms\Components\DatePicker::make('published_at')
+                            ->label('Publication Date')
+                            ->native(false)
+                            ->maxDate(now())
+                            ->default(now())
+                            ->required(),
+                        Forms\Components\ToggleButtons::make('status')
+                            ->options([
+                                'published' => 'Published',
+                                'draft' => 'Draft',
+                            ])
+                            ->inline()
+                            ->required(),
+                    ])
+                    ->columnSpan(1),
+            ])->columns(3);
     }
 
     public static function table(Table $table): Table
@@ -46,8 +77,6 @@ class PublicationResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('file_path')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('type')
                     ->searchable(),
@@ -69,6 +98,7 @@ class PublicationResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

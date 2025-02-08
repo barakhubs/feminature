@@ -27,4 +27,10 @@ class ThematicArea extends Model
     {
         return asset('storage/' . $this->image);
     }
+
+    // has many projects
+    public function projects()
+    {
+        return $this->hasMany(Project::class);
+    }
 }

@@ -1,6 +1,8 @@
 @php
     $thematicAreas = \App\Models\ThematicArea::where('status', 1)->orderBy('created_at', 'desc')->take(6)->get();
     $post = \App\Models\Blog::where('status', 'published')->orderBy('created_at', 'desc')->first();
+    $settings = \App\Models\Setting::first();
+    $social_network = json_decode($settings->social_network, true);
 @endphp
 
 <header class="header_section">
@@ -11,8 +13,8 @@
             <div class="contacr_info">
               <ul>
                 <li>
-                  <div class="number">
-                    <span>NEWS:</span>Give Ready to help us
+                  <div class="number" style="display: flex;">
+                    <span>NEWS:&nbsp;</span><marquee behavior="" direction=""><a style="color: #015207" href="{{ route('blog.show', $post->url) }}">{{ Str::limit($post->title, 50, '...') }}</a></marquee>
                   </div>
                 </li>
               </ul>
@@ -23,22 +25,22 @@
               <ul>
                 <li><span>Visit our social pages:</span></li>
                 <li>
-                  <a href="#">
+                  <a href="{{ $social_network['facebook'] !== null ? $social_network['facebook'] : '#' }}">
                     <i class="ti-facebook"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="{{ $social_network['x_twitter'] !== null ? $social_network['x_twitter'] : '#' }}">
                     <i class="ti-twitter-alt"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="#">
-                    <i class="ti-skype"></i>
+                  <a href="{{ $social_network['instagram'] !== null ? $social_network['instagram'] : '#' }}">
+                    <i class="ti-instagram"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="{{ $social_network['linkedin'] !== null ? $social_network['linkedin'] : '#' }}">
                     <i class="ti-linkedin"></i>
                   </a>
                 </li>
@@ -69,34 +71,33 @@
                 <li class="menu_chaild">
                   <a href="#">Who We Are</a>
                   <ul class="submenu">
-                    <li><a href="index.html">About Us</a></li>
-                    <li><a href="index-2.html">Our Board</a></li>
+                    <li><a href="{{ route('about') }}">About Us</a></li>
+                    <li><a href="#">Our Board</a></li>
                     <li><a href="{{ route('team.list') }}">Our Team</a></li>
-                    <li><a href="index-3.html">Contact us</a></li>
+                    <li><a href="#">Running Projects</a></li>
                   </ul>
                 </li>
                 <li class="menu_chaild">
                   <a href="#">What We Do</a>
                   <ul class="submenu">
-                    <li><a href="services.html">Services 1</a></li>
-                    <li><a href="services-s2.html">Services 2</a></li>
-                    <li><a href="services-s3.html">Services 3</a></li>
-                    <li><a href="services-s4.html">Services 4</a></li>
-                    <li><a href="services-single.html">Services single</a></li>
+                    @foreach ($thematicAreas as $item)
+                        <li><a href="{{ $item->url }}">{{ $item->title }}</a></li>
+                    @endforeach
+
                   </ul>
                 </li>
-                <li><a href="{{ route('thematic-area.list') }}">Thematic Areas</a></li>
                 <li class="menu_chaild">
                   <a href="#">Resource Center</a>
                   <ul class="submenu">
                     <li><a href="{{ route('blog.list') }}">Latest news</a></li>
-                    <li><a href="causes-single.html">Upcoming Events</a></li>
-                    <li><a href="project.html">Publications</a></li>
-                    <li><a href="project-single.html">Gallery</a></li>
+                    <li><a href="#">Upcoming Events</a></li>
+                    <li><a href="{{ route ('publications.list') }}">Publications</a></li>
+                    <li><a href="#">Gallery</a></li>
                     <li><a href="{{ route('jobs.list') }}">Join Us</a></li>
-                    <li><a href="testimonial.html">Testimonial</a></li>
+                    <li><a href="#">Testimonial</a></li>
                   </ul>
                 </li>
+                <li><a href="{{ route('contact') }}">Contact us</a></li>
               </ul>
             </div>
           </div>
@@ -111,7 +112,7 @@
                   </div>
                 </form>
               </div>
-              <a href="causes-single.html" class="btn_primary">DONATE NOW<i class="ti-arrow-right"></i></a>
+              <a href="#" class="btn_primary">DONATE NOW<i class="ti-arrow-right"></i></a>
             </div>
           </div>
         </div>

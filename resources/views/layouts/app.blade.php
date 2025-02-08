@@ -34,45 +34,6 @@
 
     @yield('content')
 
-    <!-- ==== hero start ==== -->
-
-
-    <!-- ==== features start ==== -->
-
-
-    <!-- ==== about start ==== -->
-
-
-    <!-- ==== service start ==== -->
-
-
-    <!-- ==== donat start ==== -->
-
-
-    <!-- ==== causes start ==== -->
-
-
-    <!-- ==== testimonil start ==== -->
-
-
-    <!-- ==== project start ==== -->
-
-
-    <!-- ==== process start ==== -->
-
-
-    <!-- ==== contact start ==== -->
-
-
-    <!-- ==== contact info start ==== -->
-
-
-    <!-- ==== blog start ==== -->
-
-
-    <!-- ==== cta start ==== -->
-
-
     <!-- ==== footer start ==== -->
     @include('partials.footer')
 
@@ -90,9 +51,10 @@
     <script src="{{ asset('assets/js/datepicker.js') }}"></script>
     <script src="{{ asset('assets/js/wow.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.nice-select.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
     <script src="{{ asset('assets/js/script.js') }}"></script>
 
-
+    
   </div>
 
 </body>
