@@ -10,9 +10,9 @@
                 <h2>Take Action Today!</h2>
                 <h3>Join Us in Empowering Women & Youth for a Sustainable Future!
                 </h3>
-                <p>At Feminature Uganda, we are committed to improving the lives of women and youth through climate
+                {{-- <p>At Feminature Uganda, we are committed to improving the lives of women and youth through climate
                     action, advocacy, civic engagement, and economic empowerment. Together, we can create lasting change
-                    in our communities. </p>
+                    in our communities. </p> --}}
                 <a href="#" class="btn_primary"> Donate <i class="ti-arrow-right"></i></a>
             </div>
         </div>

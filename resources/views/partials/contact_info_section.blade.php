@@ -1,3 +1,10 @@
+@php
+    $settings = \App\Models\Setting::first();
+    $email = $settings->support_email;
+    $phone = $settings->support_phone;
+    $address = $settings->address;
+@endphp
+
 <section class="contact_info_section">
     <div class="container">
       <div class="row">
@@ -8,8 +15,7 @@
             </div>
             <div class="content">
               <h2>Call This Now</h2>
-              <span>+584440066953</span>
-              <span>+8265425554811</span>
+              <span>{{ $phone }}</span>
             </div>
           </div>
         </div>
@@ -19,9 +25,8 @@
               <img src="assets/images/contact/message.png" alt="">
             </div>
             <div class="content">
-              <h2>Your Message</h2>
-              <span>nonta@gmail.com</span>
-              <span>nonta@gmail.com</span>
+              <h2>Our Email</h2>
+              <span>{{ $email }}</span>
             </div>
           </div>
         </div>
@@ -32,11 +37,12 @@
             </div>
             <div class="content">
               <h2>Your location</h2>
-              <span>3825 Bee Street <br>
-                MI 49686</span>
+              <span>{{ $address }}</span>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\SinglePageController;
 use Illuminate\Http\Request;
@@ -55,3 +56,5 @@ Route::get('/contact', [HomePageController::class, 'contact'])->name('contact');
 Route::get('/about', [HomePageController::class, 'about'])->name('about');
 Route::get('/testimonials', [HomePageController::class, 'testimonials'])->name('testimonials');
 Route::get('/gallery', [HomePageController::class, 'gallery'])->name('gallery');
+
+Route::post('/contact-us', [ContactController::class, 'send'])->name('contact.send');
