@@ -71,7 +71,7 @@ class SinglePageController extends Controller
     public function listOpportunities()
     {
         $jobs = Job::where('status', 'published')
-            ->orderBy('dealine', 'asc')
+            ->orderBy('deadline', 'asc')
             ->get();
 
         return view('pages.singles.jobs-list', compact('jobs'));

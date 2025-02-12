@@ -51,7 +51,7 @@
       </div>
     </div>
     <div class="header_wrap">
-      <a href="index.html" class="logo">
+      <a href="{{ url('/') }}" class="logo">
         <img src="{{ asset('assets/images/logo.png') }}" alt="">
       </a>
       {{-- <div class="header_about_btn" onclick="openNav()">

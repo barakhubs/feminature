@@ -42,7 +42,7 @@
                         </div>
                         <div class="image-3">
                             <img src="assets/images/about/about-6.png" alt="">
-                            <a class="popup-youtube" href="../../../../www.youtube.com/watch126d.html?v=pBFQdxA-apI">
+                            <a class="popup-youtube" href="#">
                                 <div class="video_icon"></div>
                             </a>
                         </div>
@@ -237,6 +237,6 @@
             </div>
         </div>
     </section>
-    
+
     @include('partials.cta_section')
 @endsection
