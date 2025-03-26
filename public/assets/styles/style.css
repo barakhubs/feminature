@@ -5688,6 +5688,10 @@ about_section_s2 .about_left-content .feature_wrap_about {
 .brand_section .item .image {
     margin: 0 auto;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
 }
 .brand_section .item .image img {
     display: inline;
