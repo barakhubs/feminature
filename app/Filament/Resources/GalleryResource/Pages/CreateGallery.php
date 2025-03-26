@@ -21,6 +21,6 @@ class CreateGallery extends CreateRecord
         return Notification::make()
             ->success()
             ->title('Gallery created')
-            ->body('A job has been created successfully.');
+            ->body('A gallry has been created successfully.');
     }
 }

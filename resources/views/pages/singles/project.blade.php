@@ -43,7 +43,9 @@
                                 <ul>
                                     <li><i class="ti-calendar"></i> Start date: <strong>{{ date('d M, Y', strtotime($project->start_date)) }}</strong></li>
                                     <li><i class="ti-calendar"></i> Start date: <strong>{{ date('d M, Y', strtotime($project->end_date)) }}</strong></li>
-                                    <li><i class="ti-money"></i> Funder: <strong>{{ $project->partner->name }}</strong></li>
+                                    @if ($project->partner)
+                                        <li><i class="ti-money"></i> Funder: <strong>{{ $project->partner->name }}</strong></li>
+                                    @endif
                                     <li><i class="ti-check-box"></i> Status: <strong>{{ $project->status == 1 ? 'Completed' : 'Ongoing' }}</strong></li>
                                 </ul>
                             </div>
