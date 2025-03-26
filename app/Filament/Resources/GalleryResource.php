@@ -38,8 +38,8 @@ class GalleryResource extends Resource
                         Forms\Components\TextInput::make('caption'),
                         Forms\Components\ToggleButtons::make('status')
                             ->options([
-                                'published' => 'Published',
-                                'draft' => 'Draft',
+                                '1' => 'Published',
+                                '2' => 'Draft',
                             ])
                             ->inline()
                             ->required(),
