@@ -19,7 +19,7 @@ class Publication extends Model
     ];
 
     // get filepath
-    public function getFilepathAttribute($value)
+    public function getFilePathAttribute($value)
     {
         return asset('storage/' . $value);
     }

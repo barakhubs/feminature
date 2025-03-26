@@ -1,5 +1,5 @@
 @php
-    $gallaries = \App\Models\Gallery::where('status', 'published')->limit(6)->orderBy('created_at', 'desc')->get();
+    $gallaries = \App\Models\Gallery::where('status', '1')->limit(6)->orderBy('created_at', 'desc')->get();
     $settings = \App\Models\Setting::first();
     $social_network = json_decode($settings->social_network, true);
     $email = $settings->support_email;
