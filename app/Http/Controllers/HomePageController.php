@@ -34,7 +34,7 @@ class HomePageController extends Controller
     }
 
     public function gallery (){
-        $galleries = Gallery::where('status', 'published')->orderBy('created_at', 'desc')->get();
+        $galleries = Gallery::where('status', '1')->orderBy('created_at', 'desc')->get();
         return view('pages.galleries', compact('galleries'));
     }
 
