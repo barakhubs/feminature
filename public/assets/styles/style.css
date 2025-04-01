@@ -3387,6 +3387,7 @@ img {
     border-radius: 73px;
     border-bottom-right-radius: 0;
     overflow: hidden;
+    height: 222px;
 }
 @media (max-width: 991px) {
     .service_card .image .round img {
@@ -4573,6 +4574,7 @@ img {
     width: 100%;
     transition: all 0.7s ease-in-out;
     transform: scale(1);
+    height: 198px;
 }
 .blog-card .image .overle {
     position: absolute;
