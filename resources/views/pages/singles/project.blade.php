@@ -27,7 +27,7 @@
         <div class="container">
             <div class="wrap">
                 <div class="image">
-                    <img src="{{ $project->image_url }}" alt="{{ $project->title }}" style="width: 1170px; height: 480px;">
+                    <img src="{{ $project->image_url }}" alt="{{ $project->title }}" style="width: 1170px; height: auto;">
                 </div>
                 <div class="content">
                     <h2>{{ $project->title }}</h2>
