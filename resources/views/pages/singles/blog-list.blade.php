@@ -45,7 +45,7 @@
                                     <span>{{ $item->category->title }}</span>
                                 </div>
                                 <div class="content">
-                                    <span>By: Admin, {{ $item->created_at->format('M d, Y') }}</span>
+                                    <span>By: Admin, {{ \Carbon\Carbon::parse($item->published_date)->format('M d, Y') }}</span>
                                     <h2><a href="{{ $item->url }}">{{ \Str::limit($item->title, 40, '...') }}</a></h2>
                                     <p>{!! \Str::limit($item->description, 70, '...') !!}</p>
                                 </div>

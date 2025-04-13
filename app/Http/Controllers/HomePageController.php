@@ -15,7 +15,7 @@ class HomePageController extends Controller
     public function index ()
     {
         $sliders = Slider::where('status', 'published')->orderBy('created_at', 'desc')->take(3)->get();
-        $posts = Blog::where('status', 'published')->orderBy('created_at', 'desc')->take(3)->get();
+        $posts = Blog::where('status', 'published')->orderBy('published_date', 'desc')->take(3)->get();
         $testimonials = Testimonial::where('status', 'published')->orderBy('created_at', 'desc')->take(3)->get();
         $thematicAreas = ThematicArea::where('status', 1)->orderBy('created_at', 'desc')->take(3)->get();
 

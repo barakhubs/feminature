@@ -1,6 +1,6 @@
 @php
     $thematicAreas = \App\Models\ThematicArea::where('status', 1)->orderBy('created_at', 'desc')->take(6)->get();
-    $post = \App\Models\Blog::where('status', 'published')->orderBy('created_at', 'desc')->first();
+    $post = \App\Models\Blog::where('status', 'published')->orderBy('published_date', 'desc')->first();
     $settings = \App\Models\Setting::first();
     $social_network = json_decode($settings->social_network, true);
 @endphp
