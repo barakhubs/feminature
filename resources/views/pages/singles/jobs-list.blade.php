@@ -35,6 +35,7 @@
                     </div>
                 </div>
             </div>
+            @if ($jobs->count() > 0)
             <div class="row">
                 @foreach ($jobs as $item)
                     <div class="col col-lg-4 col-md-6 col-12">
@@ -53,8 +54,8 @@
                         </div>
                     </div>
                 @endforeach
-
             </div>
+            @endif
         </div>
     </section>
 
