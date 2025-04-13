@@ -14,7 +14,7 @@
               <ul>
                 <li>
                   <div class="number" style="display: flex;">
-                    <span>NEWS:&nbsp;</span><marquee behavior="" direction=""><a style="color: #015207" href="{{ route('blog.show', $post->url) }}">{{ Str::limit($post->title, 50, '...') }}</a></marquee>
+                    <span>NEWS:&nbsp;</span><marquee behavior="" direction=""><a style="color: #015207" href="{{  $post->url }}">{{ Str::limit($post->title, 50, '...') }}</a></marquee>
                   </div>
                 </li>
               </ul>
