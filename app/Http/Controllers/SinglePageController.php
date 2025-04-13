@@ -72,7 +72,7 @@ class SinglePageController extends Controller
     {
         $jobs = Job::where('status', 'published')
             ->orderBy('deadline', 'asc')
-            ->paginate(9);
+            ->paginate(2);
 
         return view('pages.singles.jobs-list', compact('jobs'));
     }

@@ -35,6 +35,7 @@ class JobResource extends Resource
                         Forms\Components\Textarea::make('short_description')
                             ->required()
                             ->rows(3)
+                            ->minLength(250)
                             ->label('ShortDescription')
                             ->columnSpanFull(),
                         Forms\Components\RichEditor::make('description')
@@ -48,6 +49,7 @@ class JobResource extends Resource
                                 'h2',
                                 'h3',
                                 'italic',
+                                'table',
                                 'link',
                                 'orderedList',
                                 'redo',

@@ -67,12 +67,12 @@
     </section>
 
     @if ($jobs->count() > 0)
-        <div class="row">
-            <div class="col-12">
-                {{ $jobs->links() }}
-            </div>
+    <div class="row">
+        <div class="col-12">
+            {{ $jobs->links('vendor.pagination.default') }}
         </div>
-    @endif
+    </div>
+@endif
     </div>
     </section>
 @endsection
