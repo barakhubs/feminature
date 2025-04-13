@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/slick-theme.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/styles/style.css') }}"?v={{ time() }}>
+  <link rel="stylesheet" href="{{ asset('assets/styles/style.css') }}?v={{ time() }}">
 
 </head>
 
