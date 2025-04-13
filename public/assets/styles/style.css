@@ -829,7 +829,7 @@ img {
     }
 }
 .header_wrap .logo {
-    /* background: #015207; */
+    background: #f1f6f7;
     transition: all 0.3s ease-in-out;
     position: absolute;
     z-index: 1;
@@ -837,7 +837,7 @@ img {
     bottom: 0;
     padding: 20px 55px 20px 20px;
     width: 320px;
-    height: 120px;
+    /* height: 120px; */
     -webkit-clip-path: polygon(0 0, 100% 0, 89% 100%, 0% 100%);
     clip-path: polygon(0 0, 100% 0, 89% 100%, 0% 100%);
 }
