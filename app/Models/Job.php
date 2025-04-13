@@ -21,6 +21,7 @@ class Job extends Model
         'deadline',
         'status',
         'document_path',
+        'published_date'
     ];
 
     protected $casts = [

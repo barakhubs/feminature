@@ -39,6 +39,22 @@ class JobResource extends Resource
                             ->columnSpanFull(),
                         Forms\Components\RichEditor::make('description')
                             ->required()
+                            ->toolbarButtons([
+                                'attachFiles',
+                                'blockquote',
+                                'bold',
+                                'bulletList',
+                                'codeBlock',
+                                'h2',
+                                'h3',
+                                'italic',
+                                'link',
+                                'orderedList',
+                                'redo',
+                                'strike',
+                                'underline',
+                                'undo',
+                            ])
                             ->label('Description')
                             ->columnSpanFull(),
                         Forms\Components\DatePicker::make('deadline')
