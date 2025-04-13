@@ -67,15 +67,12 @@
     </section>
 
     @if ($jobs->count() > 0)
-        @if ($jobs->hasPages())
-            <div class="row">
-                <div class="col-12">
-                    {{ $jobs->links() }}
-                </div>
+        <div class="row">
+            <div class="col-12">
+                {{ $jobs->links() }}
             </div>
-        @endif
+        </div>
     @endif
     </div>
     </section>
-
 @endsection
