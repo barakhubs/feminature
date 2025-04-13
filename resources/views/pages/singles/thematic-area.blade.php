@@ -39,6 +39,7 @@
                 </div>
             </div>
             <br><br>
+            @if ($thematicArea->projects()->count() > 0)
             <div class="row">
                 <div class="col-12">
                     <div class="top_title s2">
@@ -47,11 +48,11 @@
                     </div>
                 </div>
             </div>
-
-
+            @endif
         </div>
     </section>
 
+    @if ($thematicArea->projects()->count() > 0)
     <section class="service_section_s2">
         <div class="container">
             <div class="row">
@@ -73,6 +74,7 @@
             </div>
         </div>
     </section>
+    @endif
 
     <section class="brand_section">
         <h2 class="d-none">display hidden</h2>
