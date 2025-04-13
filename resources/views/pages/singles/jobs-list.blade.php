@@ -25,6 +25,7 @@
 
     <section class="blog_section_s5 section_space">
         <div class="container">
+            @if ($jobs->count() > 0)
             <div class="row">
                 <div class="top_title">
                     <div class="row">
@@ -35,7 +36,7 @@
                     </div>
                 </div>
             </div>
-            @if ($jobs->count() > 0)
+
             <div class="row">
                 @foreach ($jobs as $item)
                     <div class="col col-lg-4 col-md-6 col-12">
@@ -54,6 +55,21 @@
                         </div>
                     </div>
                 @endforeach
+            </div>
+            @else
+            <div class="col-12">
+                <h2 class="text-center">No Jobs Found</h2>
+            </div>
+            @endif
+        </div>
+    </div>
+</section>
+
+@if($jobs->hasPages())
+    <div class="row">
+        <div class="col-12">
+            {{ $jobs->links() }}
+        </div>
             </div>
             @endif
         </div>
