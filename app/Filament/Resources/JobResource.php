@@ -44,7 +44,6 @@ class JobResource extends Resource
                         Forms\Components\DatePicker::make('deadline')
                             ->label('Deadline')
                             ->native(false)
-                            ->minDate(now()->toDateString())
                             ->required(),
                         Forms\Components\FileUpload::make('document_path')
                             ->label('Upload Document (Optional)')
@@ -86,6 +85,11 @@ class JobResource extends Resource
                                 'closed' => 'Closed',
                             ])
                             ->inline()
+                            ->required(),
+                        Forms\Components\DatePicker::make('published_date')
+                            ->label('Published Date')
+                            ->native(false)
+                            ->maxDate(now()->toDateString())
                             ->required(),
                     ])
                     ->columnSpan(1),

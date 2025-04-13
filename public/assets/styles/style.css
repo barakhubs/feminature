@@ -3176,6 +3176,7 @@ img {
     padding-bottom: 70px;
     position: relative;
     z-index: 1;
+    background-color: #f1f7f7;
 }
 @media (max-width: 991px) {
     .service_section {

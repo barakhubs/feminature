@@ -29,7 +29,7 @@ class SinglePageController extends Controller
 
     public function list ()
     {
-        $posts = Blog::where('status', 'published')->orderBy('created_at', 'desc')->get();
+        $posts = Blog::where('status', 'published')->orderBy('published_date', 'desc')->get();
         $categories = BlogCategory::where('status', 1)->get();
         return view('pages.singles.blog-list', compact('posts', 'categories'));
     }

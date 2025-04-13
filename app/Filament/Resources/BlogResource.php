@@ -54,6 +54,10 @@ class BlogResource extends Resource
                         ])
                         ->inline()
                         ->required(),
+                    Forms\Components\DatePicker::make('published_date')
+                        ->native(false)
+                        ->maxDate(now())
+                        ->required(),
                     Forms\Components\FileUpload::make('image')
                         ->label('Featured Image')
                         ->required()
